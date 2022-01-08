@@ -1,0 +1,3 @@
+os-develop/build-externs
+os-develop/build/*.o
+os-develop/bin/*.bin
