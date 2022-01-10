@@ -1,0 +1,12 @@
+{
+    "C_Cpp.errorSquiggles": "Enabled",
+    "files.associations": {
+        "hash_map": "c",
+        "hash_set": "c",
+        "algorithm": "c",
+        "bitset": "c",
+        "chrono": "c",
+        "dynamic_bitset": "c",
+        "memory.h": "c"
+    }
+}
