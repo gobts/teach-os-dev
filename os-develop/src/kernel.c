@@ -4,10 +4,11 @@
 #include "idt/idt.h"
 #include "io/io.h"
 #include "status.h"
+#include "string/string.h"
 #include "memory/heap/kheap.h"
 #include "memory/paging/paging.h"
 #include "disk/disk.h"
-
+#include "fs/pparser.h"
 
 uint16_t* video_men = 0;
 
@@ -41,8 +42,6 @@ void terminal_writechar(char c, char colour)
     }
 }
 
-
-
 void terminal_initialize()
 {
     video_men = (uint16_t*)(0xB8000);
@@ -55,18 +54,6 @@ void terminal_initialize()
 
         }
     }
-    
-}
-
-size_t strlen( const char* str)
-{
-    size_t len = 0;
-    while (str[len])
-    {
-        len++; 
-    }
-
-    return len;
     
 }
 
@@ -102,34 +89,20 @@ void kernel_main()
     // switch to kernel paging
     paging_switch(paging_4gb_chunk_get_directory(kernel_chunk));
 
-    char* ptr = kzalloc(4096); 
-    paging_set(paging_4gb_chunk_get_directory(kernel_chunk), (void*)0x1000, (uint32_t)ptr | PAGING_ACCESS_FROM_ALL | PAGING_IS_PRESENT | PAGING_IS_WRITEABLE);
+    // char* ptr = kzalloc(4096); 
+    // paging_set(paging_4gb_chunk_get_directory(kernel_chunk), (void*)0x1000, (uint32_t)ptr | PAGING_ACCESS_FROM_ALL | PAGING_IS_PRESENT | PAGING_IS_WRITEABLE);
     // enable paging
     enable_paging();
     
-    // char* ptr2 = (char*) 0x1000;
-    // ptr2[0] = 'A';
-    // ptr2[1] = 'B';
-    // ptr2[2] = 'C';
-
-    // print(ptr2);
-    // print((char*)0x1000);
-
-    // char buf[512];
-    // disk_read_sector(0, 1, buf);
-
     // Enable the system interrupts
     enable_interrupts();
     // // problem();
     // //outb(0x60, 0xff);
-    // void* ptr = kmalloc(50);
-    // void* ptr2 = kmalloc(5000);
-    // void* ptr3 = kmalloc(5600);
-    // kfree(ptr);
-    // void* ptr4 = kmalloc(50);
 
-    // if(ptr || ptr2 || ptr3 || ptr4)
-    // {
+    struct path_root* root_path = pathparser_parse("0:/bin/shell.bin", NULL);
 
-    // }
+    if (root_path)
+    {
+
+    }
 }

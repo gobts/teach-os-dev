@@ -7,6 +7,7 @@
         "bitset": "c",
         "chrono": "c",
         "dynamic_bitset": "c",
-        "memory.h": "c"
+        "memory.h": "c",
+        "kheap.h": "c"
     }
 }
