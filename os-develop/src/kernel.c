@@ -9,6 +9,7 @@
 #include "memory/paging/paging.h"
 #include "disk/disk.h"
 #include "fs/pparser.h"
+#include "disk/streamer.h"
 
 uint16_t* video_men = 0;
 
@@ -99,10 +100,17 @@ void kernel_main()
     // // problem();
     // //outb(0x60, 0xff);
 
-    struct path_root* root_path = pathparser_parse("0:/bin/shell.bin", NULL);
+    // struct path_root* root_path = pathparser_parse("0:/bin/shell.bin", NULL);
 
-    if (root_path)
-    {
+    // if (root_path)
+    // {
 
-    }
+    // }
+
+    struct disk_stream* stream = diskstreamer_new(0);
+    diskstreamer_seek(stream, 0x204);
+    unsigned char c = 0;
+    diskstreamer_read(stream, &c, 1);
+    while(1) {}
+    
 }
