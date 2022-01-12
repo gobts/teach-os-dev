@@ -8,6 +8,8 @@
         "chrono": "c",
         "dynamic_bitset": "c",
         "memory.h": "c",
-        "kheap.h": "c"
+        "kheap.h": "c",
+        "filesystem": "cpp",
+        "fstream": "cpp"
     }
 }
