@@ -41,7 +41,7 @@ outw:
     mov ebp, esp
 
     mov eax, [ebp+12]
-    mov edx, [ebp+12]
+    mov edx, [ebp+8]
     out dx, ax
 
     pop ebp

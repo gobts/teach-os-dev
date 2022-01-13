@@ -6,6 +6,7 @@
 #include "status.h"
 #include "string/string.h"
 #include "memory/heap/kheap.h"
+#include "fs/fat/fat16.h"
 #include "memory/paging/paging.h"
 #include "disk/disk.h"
 #include "fs/pparser.h"
@@ -79,6 +80,8 @@ void kernel_main()
     // Initialize the heap
     kheap_init();
 
+    fs_init();
+
     disk_search_and_init();
 
     // initialize interruptions table
@@ -111,6 +114,9 @@ void kernel_main()
     diskstreamer_seek(stream, 0x201);
     unsigned char c = 0;
     diskstreamer_read(stream, &c, 1);
+    char buf[50];
+    strcpy(buf, "Hola como estas?");
+
     while(1) {}
     
 }

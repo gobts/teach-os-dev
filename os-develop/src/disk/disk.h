@@ -15,7 +15,12 @@ struct disk
     RODOOS_DISK_TYPE type;
     int sector_size;
 
+    // the id od the disk
+    int id;
+    
     struct filesystem* filesystem;
+
+    void* fs_private;
 };
 
 void disk_search_and_init();

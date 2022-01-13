@@ -10,6 +10,22 @@
         "memory.h": "c",
         "kheap.h": "c",
         "filesystem": "cpp",
-        "fstream": "cpp"
+        "fstream": "cpp",
+        "internet": "c",
+        "*.inc": "c",
+        "*.tcc": "cpp",
+        "optional": "cpp",
+        "istream": "cpp",
+        "ostream": "cpp",
+        "ratio": "cpp",
+        "system_error": "cpp",
+        "type_traits": "cpp",
+        "variant": "cpp",
+        "array": "cpp",
+        "functional": "cpp",
+        "regex": "cpp",
+        "tuple": "cpp",
+        "utility": "cpp",
+        "kernel.h": "c"
     }
 }
