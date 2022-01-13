@@ -10,7 +10,7 @@
         "memory.h": "c",
         "kheap.h": "c",
         "filesystem": "cpp",
-        "fstream": "cpp",
+        "fstream": "c",
         "internet": "c",
         "*.inc": "c",
         "*.tcc": "cpp",
