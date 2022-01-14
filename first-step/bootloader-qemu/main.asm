@@ -1,8 +1,8 @@
 ORG 0X7C00
-BITS 16
+[BITS 16]
 
 start:
-    mov si, message
+    mov si, message_hola
     call print
     jmp $
 
@@ -15,15 +15,15 @@ print:
     call print_char
     jmp .loop
 
-.done
+.done:
     ret
 
-print_char
+print_char:
     mov ah, 0eh
     int 0x10
     ret
 
-message: db 'Hello World', 0
+message_hola: db 'Hola Mundo!', 0
 
 times 510-($ - $$) db 0
 dw 0xAA55

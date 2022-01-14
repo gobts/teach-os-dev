@@ -70,7 +70,7 @@ gdt_descriptor:
     mov gs, ax
     mov ss, ax
     mov ebp, 0x00200000
-    mov esp, esb
+    mov esp, ebp
     
     jmp $
 

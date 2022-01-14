@@ -1,9 +1,9 @@
 # assembler
 ASM = /usr/bin/nasm
 # compiler
-CC = /usr/bin/gcc
+CC = i686-elf-gcc
 # linker
-LD = /usr/bin/ld
+LD = i686-elf-ld
 # grub iso creator
 GRUB = /usr/bin/grub-mkrescue
 # sources

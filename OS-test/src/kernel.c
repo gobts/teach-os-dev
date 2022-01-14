@@ -55,7 +55,7 @@ void kmain() {
             continue;
         if(strcmp(buffer, "cpuid") == 0) {
             cpuid_info();
-        } else if(strcmp(buffer, "help") == 0) {
+        } else if(strcmp(buffer, "help") == 0 || strcmp(buffer, "HELP") == 0) {
             printf("Rodolfo OS Terminal\n");
             printf("Commands: help, cpuid, echo, mouse, pong\n");
         } else if(strcmp(buffer, "mouse") == 0) {
